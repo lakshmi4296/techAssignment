@@ -16,6 +16,7 @@ As part of building the data warehouse to load the fact and dimension data into 
 1. Given DDL statements were executed on SQL Server and data was exported as csv
 2. CSV files containing the Dimensions (DimDate, DimProduct, DimStore) are loaded into MongoDB using python (script.py) 
 
+<Talend> 
 3. tFileList is used to loop through the given data in yyyy/MM/dd/xx/xxxx.txt.gzip format
 4. tJAVA is used to get the subfolder(MM and dd) in variables
 5. The compressed files are extracted in a temporary folder, combined and save as pipe delimited file in /dataextract/yy/MM/dd/factstore folder respectively
