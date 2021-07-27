@@ -23,6 +23,7 @@ As part of building the data warehouse to load the fact and dimension data into 
 5. The compressed files are extracted in a temporary folder, combined and save as pipe delimited file in /dataextract/yy/MM/dd/factstore folder respectively
 6. After the data is stored in the specified format, again tFileList is used to loop through these folders 
 7. The files in these subfolders are read and loaded into MongoDB FactStore collection
+8. The temp folder used for uncompressing is cleared out in post job
 
 
-8. NoSQL queries are available on queries.txt
+9. NoSQL queries are available on queries.txt
