@@ -7,7 +7,7 @@ Python Script for consuming WebServices using requests for GET and POST methods
 Exported Talend Job created in TOS_BD-20200219_1130-V7.3.1 containig the implementation of Data Flow Orchestration 
 
 
-![alt text](https://github.com/lakshmi4296/techAssignment/blob/main/DataFlow.png)
+![alt text](https://github.com/lakshmi4296/techAssignment/blob/main/DataFlowOrchestration/DataFlow.png)
 
 #### Steps followed
 
@@ -26,4 +26,4 @@ As part of building the data warehouse to load the fact and dimension data into 
 8. The temp folder used for uncompressing is cleared out in post job
 
 
-9. NoSQL queries are available on queries.txt
+9. Queries are available on queries.txt

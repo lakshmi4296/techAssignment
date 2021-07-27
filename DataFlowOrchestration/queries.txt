@@ -1,0 +1,58 @@
+Select p.ProductCategoryName, AVG(s.OnHandQuantity) AverageOnHandQuality
+from FactStore s 
+join DimProducts p
+on s.ProductID = p.ProductID
+group by p.ProductCategoryName
+
+
+
+jtc.FactStore.aggregate([
+	{"$lookup":{
+				  from: 'DimProducts',
+				  localField: 'ProductID',
+				  foreignField: 'ProductID',
+				  as: 'Prod'
+				}
+	},
+	
+	{"$unwind":"$Prod"
+	},
+	
+	{"$group":
+		{"_id":{"ProdCatName":"$Prod.ProductCategoryName"},
+			"avgOnHandQty":{"$avg":"$OnHandQuantity"}
+		}
+	}
+			])
+
+---------------------------------------------------------------------------------
+
+Select ds.StoreType , AVG(f.OnHandQuantity) AverageOnHandQuality
+from FactStore f 
+join DimStores ds
+on f.StoreID = ds.StoreID
+group by ds.StoreType
+		
+		
+		
+		
+jtc.FactStore.aggregate([
+	{"$lookup":{
+				  from: 'DimStores',
+				  localField: 'StoreID',
+				  foreignField: 'StoreID',
+				  as: 'Store'
+				}
+	},
+	
+	{"$unwind":"$Store"
+	},
+	
+	{"$group":
+		{"_id":{"StoreName":"$Store.StoreType"},
+			"avgOnHandQty":{"$avg":"$OnHandQuantity"}
+		}
+	}
+			])
+			
+			
